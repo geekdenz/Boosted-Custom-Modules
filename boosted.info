@@ -1,0 +1,6 @@
+name = Boosted Functionality
+description = Module for custom Boosted functionality
+package = Boosted
+core = 7.x
+dependencies[] = pathauto
+;files[] = node_example.test

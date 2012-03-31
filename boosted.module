@@ -1,0 +1,20 @@
+<?php
+
+function boosted_node_validate($node, $form, &$form_state) {
+  if ($node->type != 'artist_page') {
+    return; // only need to act on artist nodes
+  }
+  module_load_include('inc', 'pathauto'); // needed to load library functions from pathauto
+  if (drupal_lookup_path('source', pathauto_cleanstring($node->title))) {
+    form_set_error('title', t('Title already taken. Titles are considered the same if they would get the same URL. E.g. "Title Page" = "tITle-PaGe"'));
+  }
+}
+
+function boosted_pathauto($op) {
+  echo "<pre>";
+  print_r($op);
+  die();
+}
+function boosted_path_alias_types() {
+  die('qwe');
+}
