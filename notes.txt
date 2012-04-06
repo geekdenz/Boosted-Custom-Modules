@@ -1,0 +1,2 @@
+Enable autosave module:
+under the content type's configuration page (Administration > Structure > Content Types > Edit). The enable option is under the "Publishing Options" section.
