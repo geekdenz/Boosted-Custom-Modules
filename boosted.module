@@ -10,6 +10,7 @@ function boosted_node_validate($node, $form, &$form_state) {
   }
 }
 
+/*
 function boosted_pathauto($op) {
   echo "<pre>";
   print_r($op);
@@ -18,3 +19,4 @@ function boosted_pathauto($op) {
 function boosted_path_alias_types() {
   die('qwe');
 }
+ */
