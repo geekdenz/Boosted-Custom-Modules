@@ -4,7 +4,7 @@ function boosted_node_validate($node, $form, &$form_state) {
   if ($node->type != 'artist_page') {
     return; // only need to act on artist nodes
   }
-  if ($node->nid === NULL) {
+  if ($node->nid !== NULL) {
     return;
   }
   module_load_include('inc', 'pathauto'); // needed to load library functions from pathauto
