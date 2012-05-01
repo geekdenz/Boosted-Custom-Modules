@@ -12,3 +12,7 @@ function boosted_node_validate($node, $form, &$form_state) {
     form_set_error('title', t('Title already taken. Titles are considered the same if they would get the same URL. E.g. "Title Page" = "tITle-PaGe"'));
   }
 }
+
+function boosted_form_user_register_form_alter() {
+  drupal_add_js(drupal_get_path('module', 'boosted') .'/user-registration.js');
+}
