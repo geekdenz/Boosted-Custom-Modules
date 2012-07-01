@@ -1,6 +1,8 @@
 (function($) {
   var settings = {
-    termsId: 'helprow-custom_11'
+    termsId: 'helprow-custom_11',
+    formId: 'user-register-form',
+    bankAccountId: 'custom_10'
   };
   $(function() {
     var $terms = $('#'+ settings.termsId),
@@ -16,5 +18,12 @@
       }
     });
     $terms.hide();
+    $('#'+ settings.formId).submit(function() {
+      var val = $('#'+ settings.bankAccountId).val();
+      if (!val.match(/^[0-9]{2}[ -]?[0-9]{4}[ -]?[0-9]{7}[ -]?[0-9]{2,3}$/)) {
+        alert('00 0000 0000000 000 not given');
+        return false;
+      }
+    });
   });
 })(jQuery);
