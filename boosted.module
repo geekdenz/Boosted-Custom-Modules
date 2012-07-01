@@ -13,6 +13,18 @@ function boosted_node_validate($node, $form, &$form_state) {
   }
 }
 
-function boosted_form_user_register_form_alter() {
+function boosted_form_user_register_form_alter(&$form, &$form_state) {
   drupal_add_js(drupal_get_path('module', 'boosted') .'/user-registration.js');
+  $form['#validate'][] = 'boosted_user_register_form_validate';
 }
+
+function boosted_user_register_form_validate($node, &$form) {
+  $bank_account_no = $form['input']['custom_10'];
+  if (!preg_match('/^[0-9]{2}[ -]?[0-9]{4}[ -]?[0-9]{7}[ -]?[0-9]{2,3}$/', $bank_account_no)) {
+      form_set_error('user_register', t('Please enter a valid New Zealand bank account number (e.g. 01 1234 1234567 12).'));
+      return;
+  }
+  // 00 0000 0000000 00
+  return;
+}
+//user-register-form
