@@ -3,7 +3,7 @@
     termsId: 'helprow-custom_11',
     formId: 'user-register-form',
     bankAccountId: 'custom_10',
-    accountMsg: 'Please enter a valid New Zealand bank account.'
+    accountMsg: ' Please enter a valid New Zealand bank account.'
   };
   $(function() {
     var $terms = $('#'+ settings.termsId),
