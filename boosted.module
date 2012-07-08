@@ -24,7 +24,5 @@ function boosted_user_register_form_validate($node, &$form) {
       form_set_error('user_register', t('Please enter a valid New Zealand bank account number (e.g. 01 1234 1234567 12).'));
       return;
   }
-  // 00 0000 0000000 00
   return;
 }
-//user-register-form
