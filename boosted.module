@@ -22,15 +22,11 @@ function boosted_node_submit($node, $form, &$form_state) {
     return;
   }
   
+  return;
   civicrm_initialize();
   $results = civicrm_api("Campaign","create", array ('version' =>'3', 'name' =>'TestCampaign', 'title' =>'Test Campaign', 'description' =>'MY DESC', 'start_date' =>'2012-07-01', 'end_date' =>'2012-09-01', 'goal_revenue' =>'2000', 'goal_general' =>'10000'));
   print_r($results);
   die();
-  /*
-  print_r($results === false ? 'false' : 'someting');
-  die();
-   * 
-   */
 }
 
 function boosted_form_user_register_form_alter(&$form, &$form_state) {
