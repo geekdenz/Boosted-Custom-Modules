@@ -1,11 +1,11 @@
 (function($) {
   var settings = {
-    termsId: 'helprow-custom_11',
+    termsId: 'helprow-custom_8',
     formId: 'user-register-form',
-    bankAccountId: 'custom_10',
+    bankAccountId: 'custom_7',
     accountMsg: ' Please enter a valid New Zealand bank account.'
   };
-  $(function() {
+  $(document).ready(function() {
     var $terms = $('#'+ settings.termsId),
         $showterms = $('<a id="boosted-'+ settings.termsId +'" class="boosted-showterms" href="#boosted-'+ settings.termsId +'">Show Terms and Conditions</a>');
     $terms.after($showterms);

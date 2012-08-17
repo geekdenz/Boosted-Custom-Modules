@@ -1,5 +1,7 @@
 <?php
 
+define('BANK_ACCOUNT_INPUT', 'custom_7');
+
 function boosted_node_validate($node, $form, &$form_state) {
   if ($node->type != 'artist_page') {
     return; // only need to act on artist nodes
@@ -35,10 +37,22 @@ function boosted_form_user_register_form_alter(&$form, &$form_state) {
 }
 
 function boosted_user_register_form_validate($node, &$form) {
-  $bank_account_no = $form['input']['custom_10'];
+  $bank_account_no = $form['input'][BANK_ACCOUNT_INPUT];
   if (!preg_match('/^[0-9]{2}[ -]?[0-9]{4}[ -]?[0-9]{7}[ -]?[0-9]{2,3}$/', $bank_account_no)) {
       form_set_error('user_register', t('Please enter a valid New Zealand bank account number (e.g. 01 1234 1234567 12).'));
       return;
   }
   return;
+}
+
+function boosted_js_alter(&$javascript, $second) {
+  //print_r($second);
+  $dest_array = drupal_get_destination();
+  if ($dest_array['destination'] == "user/register") {
+    
+    //print_r($javascript['sites/all/modules/contrib/jquery_update/replace/jquery/jquery.min.js']);
+    //unset($javascript['sites/all/modules/contrib/jquery_update/replace/jquery/jquery.min.js']);
+    //echo "\n\n";
+    //die(print_r($javascript,true));
+  }
 }
